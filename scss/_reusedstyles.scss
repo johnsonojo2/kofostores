@@ -1,0 +1,22 @@
+.container {
+  padding: 0 15px;
+}
+
+.has-scrollbar {
+  padding-bottom: 5px;
+  &::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: transparent;
+    border: 3px solid var(--white);
+    border-radius: 20px;
+  }
+  &:hover::-webkit-scrollbar-thumb {
+    background: hsl(0, 0%, 90%);
+  }
+  &::-webkit-scrollbar-thumb:hover {
+    background: hsl(0, 0%, 80%);
+  }
+}
