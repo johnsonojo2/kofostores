@@ -28,7 +28,7 @@ toastCloseBtn.addEventListener("click", () => {
 const mobileMenuOpenBtn = document.querySelectorAll(
   "[data-mobile-menu-open-btn]"
 );
-
+// future johnson:remember to add queryselector all
 const mobileMenu = document.querySelector("[data-mobile-menu]");
 const mobileMenuCloseBtn = document.querySelector(
   "[data-mobile-menu-close-btn]"
@@ -42,12 +42,12 @@ for (let btn of mobileMenuOpenBtn) {
     mobileMenu.classList.remove("active");
     overlay.classList.remove("active");
   };
-
+  //future johnson:if this section breaks rember that its for of loop youre using
   btn.addEventListener("click", () => {
     mobileMenu.classList.add("active");
     overlay.classList.add("active");
   });
-
+  //future johnson:if this section breaks rember that its for of loop youre using
   mobileMenuCloseBtn.addEventListener("click", mobileMenuCloseFunc);
   overlay.addEventListener("click", mobileMenuCloseFunc);
 }
@@ -62,6 +62,7 @@ for (let i = 0; i < accordionBtn.length; i++) {
     const clickedBtn = this.nextElementSibling.classList.contains("active");
 
     for (let i = 0; i < accordion.length; i++) {
+      // this is to makesure that the menu title closes on click
       if (clickedBtn) break;
 
       if (accordion[i].classList.contains("active")) {
