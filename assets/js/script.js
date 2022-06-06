@@ -25,44 +25,40 @@ toastCloseBtn.addEventListener("click", () => {
 
 //MOBILE MENU
 
+// mobile menu variables
 const mobileMenuOpenBtn = document.querySelectorAll(
   "[data-mobile-menu-open-btn]"
 );
-// future johnson:remember to add queryselector all
 const mobileMenu = document.querySelector("[data-mobile-menu]");
 const mobileMenuCloseBtn = document.querySelector(
   "[data-mobile-menu-close-btn]"
 );
 const overlay = document.querySelector("[data-overlay]");
 
-// I REPLACED FOR LOOP WITH FOR OF LOOP JUST IN CASE I NEED TO EDIT ANY OF THE CODE LATER
-for (let btn of mobileMenuOpenBtn) {
-  // mobile menu open & close function
-  const mobileMenuCloseFunc = () => {
+for (let i = 0; i < mobileMenuOpenBtn.length; i++) {
+  // mobile menu function
+  const mobileMenuCloseFunc = function () {
     mobileMenu.classList.remove("active");
     overlay.classList.remove("active");
   };
-  //future johnson:if this section breaks rember that its for of loop youre using
-  btn.addEventListener("click", () => {
+
+  mobileMenuOpenBtn[i].addEventListener("click", function () {
     mobileMenu.classList.add("active");
     overlay.classList.add("active");
   });
-  //future johnson:if this section breaks rember that its for of loop youre using
+
   mobileMenuCloseBtn.addEventListener("click", mobileMenuCloseFunc);
   overlay.addEventListener("click", mobileMenuCloseFunc);
 }
 
-//ACCORDION MENU
-
 const accordionBtn = document.querySelectorAll("[data-accordion-btn]");
-const accordion = document.querySelectorAll("[data-accordion");
+const accordion = document.querySelectorAll("[data-accordion]");
 
 for (let i = 0; i < accordionBtn.length; i++) {
   accordionBtn[i].addEventListener("click", function () {
     const clickedBtn = this.nextElementSibling.classList.contains("active");
 
     for (let i = 0; i < accordion.length; i++) {
-      // this is to makesure that the menu title closes on click
       if (clickedBtn) break;
 
       if (accordion[i].classList.contains("active")) {
@@ -75,75 +71,3 @@ for (let i = 0; i < accordionBtn.length; i++) {
     this.classList.toggle("active");
   });
 }
-
-// "use strict";
-
-// // modal variables
-// const modal = document.querySelector("[data-modal]");
-// const modalCloseBtn = document.querySelector("[data-modal-close]");
-// const modalCloseOverlay = document.querySelector("[data-modal-overlay]");
-
-// // modal function
-// const modalCloseFunc = function () {
-//   modal.classList.add("closed");
-// };
-
-// // modal eventListener
-// modalCloseOverlay.addEventListener("click", modalCloseFunc);
-// modalCloseBtn.addEventListener("click", modalCloseFunc);
-
-// // notification toast variables
-// const notificationToast = document.querySelector("[data-toast]");
-// const toastCloseBtn = document.querySelector("[data-toast-close]");
-
-// // notification toast eventListener
-// toastCloseBtn.addEventListener("click", function () {
-//   notificationToast.classList.add("closed");
-// });
-
-// // mobile menu variables
-// const mobileMenuOpenBtn = document.querySelectorAll(
-//   "[data-mobile-menu-open-btn]"
-// );
-// const mobileMenu = document.querySelector("[data-mobile-menu]");
-// const mobileMenuCloseBtn = document.querySelector(
-//   "[data-mobile-menu-close-btn]"
-// );
-// const overlay = document.querySelector("[data-overlay]");
-
-// for (let i = 0; i < mobileMenuOpenBtn.length; i++) {
-//   // mobile menu function
-//   const mobileMenuCloseFunc = function () {
-//     mobileMenu.classList.remove("active");
-//     overlay.classList.remove("active");
-//   };
-
-//   mobileMenuOpenBtn[i].addEventListener("click", function () {
-//     mobileMenu.classList.add("active");
-//     overlay.classList.add("active");
-//   });
-
-//   mobileMenuCloseBtn.addEventListener("click", mobileMenuCloseFunc);
-//   overlay.addEventListener("click", mobileMenuCloseFunc);
-// }
-
-// const accordionBtn = document.querySelectorAll("[data-accordion-btn]");
-// const accordion = document.querySelectorAll("[data-accordion]");
-
-// for (let i = 0; i < accordionBtn.length; i++) {
-//   accordionBtn[i].addEventListener("click", function () {
-//     const clickedBtn = this.nextElementSibling.classList.contains("active");
-
-//     for (let i = 0; i < accordion.length; i++) {
-//       if (clickedBtn) break;
-
-//       if (accordion[i].classList.contains("active")) {
-//         accordion[i].classList.remove("active");
-//         accordionBtn[i].classList.remove("active");
-//       }
-//     }
-
-//     this.nextElementSibling.classList.toggle("active");
-//     this.classList.toggle("active");
-//   });
-// }
