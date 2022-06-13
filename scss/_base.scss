@@ -64,9 +64,17 @@ a {
   --weight-600: 600;
   --weight-700: 700;
 
-  // border-radius
-
-  --border-radius-md: 10px;
+  @media screen and (min-width: 480px) {
+    --fs-1: 1.875rem;
+  }
+  @media screen and (min-width: 768px) {
+    --fs-1: 2.375rem;
+  }
+  @media (min-width: 1024px) {
+    --fs-1: 2.625rem;
+    --fs-2: 1.125rem;
+  }
+  // border-radius --border-radius-md: 10px;
   --border-radius-sm: 5px;
 
   // transition
@@ -76,6 +84,13 @@ a {
 html {
   font-family: "Poppins", sans-serif;
   overscroll-behavior: contain;
+
+  @media screen and (min-width: 768px) {
+    font-size: 17px;
+  }
+  @media screen and (min-width: 1400px) {
+    font-size: 18px;
+  }
 }
 
 input {
